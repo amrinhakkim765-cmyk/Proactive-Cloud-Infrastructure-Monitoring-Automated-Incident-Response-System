@@ -1,0 +1,63 @@
+PROJECT REVIEW
+
+PROJECT TITLE:
+Proactive Cloud Infrastructure Monitoring & Automated Incident Response System
+
+DOMAIN:
+Cloud Computing / AWS
+
+PROBLEM STATEMENT:
+Manual monitoring of cloud servers 24/7 is difficult. If high CPU usage or a server issue is detected late, it may cause application performance problems or downtime.
+
+OBJECTIVE:
+To develop an automated cloud monitoring system that detects high CPU utilization and immediately sends an alert to the user.
+
+PROPOSED SOLUTION:
+The system uses AWS EC2, CloudWatch, and SNS to monitor server CPU utilization and send automatic email alerts when the configured threshold is exceeded.
+
+AWS SERVICES USED:
+1. Amazon EC2 – Provides the cloud server.
+2. Amazon CloudWatch – Monitors EC2 CPU utilization and triggers alarms.
+3. Amazon SNS – Sends alert notifications to the subscribed email.
+4. AWS CloudShell – Used to generate CPU load for testing.
+
+WORKING:
+EC2 → CloudWatch → CloudWatch Alarm → SNS → Email Alert
+
+IMPLEMENTATION:
+1. Create and run an EC2 instance.
+2. Create an SNS topic.
+3. Add an email subscription and confirm it.
+4. Create a CloudWatch alarm for EC2 CPU utilization.
+5. Set a CPU threshold, for example 70%.
+6. Connect the CloudWatch alarm to the SNS topic.
+7. Generate CPU load using a CloudShell/EC2 command.
+8. When CPU utilization crosses the threshold, CloudWatch changes the alarm state.
+9. SNS automatically sends an alert email.
+
+DEMO:
+For demonstration, CPU load is generated on the EC2 instance. When the CPU utilization crosses the configured threshold, the CloudWatch alarm changes to ALARM state. The alarm triggers SNS, and an alert notification is received through email.
+
+REAL-WORLD EXAMPLE:
+If an e-commerce website experiences heavy traffic during a festival sale, the EC2 server may experience high CPU utilization. CloudWatch can detect this automatically and SNS can immediately notify the administrator.
+
+KEY FEATURES:
+• Zero-code monitoring workflow
+• Automated email alerts
+• Event-driven architecture
+• Low maintenance
+• Scalable AWS-based solution
+• Reduces dependency on manual monitoring
+
+UNIQUENESS:
+The project combines AWS managed services to create an automated monitoring and alerting pipeline without requiring custom monitoring scripts or continuous manual checking.
+
+FUTURE SCOPE:
+• Monitor memory, disk and network metrics
+• Integrate AWS Lambda for automated remediation
+• Add multiple notification channels
+• Monitor multiple EC2 instances
+• Extend the system into a complete automated incident-response solution
+
+CONCLUSION:
+This project demonstrates how AWS CloudWatch and SNS can be combined with EC2 to automatically detect high CPU utilization and notify users in near real time. It provides a simple and scalable approach to cloud infrastructure monitoring.
